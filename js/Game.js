@@ -34,16 +34,14 @@ class Game {
     car2.scale = 0.07;
 
     cars = [car1, car2];
-     //SEXTO CREAR SPRITES PARA RECOMPENSAS(preguntar que tiene en comun los objetos)
      fuels=new Group();
      powerCoins=new Group();
-       //OCTAVO AGREGAR MONEDAS AL JUEGO 
-    //PREGUNTAR POR ALGUNA SUGERENCIA DE COMO SABER SI EL AUTO ESTÁ TOCANDO ALGUN SPRITE
+     
+
     this.addSprites(fuels,4,fuelImage,0.02)
     this.addSprites(powerCoins,18,powerCoinImage,0.09)
   }
-  //SÉPTIMO ADICIONAR FUNCIÓN COMUN PARA CREAR MONEDAS Y COMBUSTIBLE
-  //AGREGAR FUNCIÓN EN START
+
   addSprites(spriteGroup, numberOfSprites, spriteImage, scale) {
     for (var i = 0; i < numberOfSprites; i++) {
       var x, y;
@@ -89,8 +87,7 @@ class Game {
         // Agrega 1 al índice en cada ciclo
         index = index + 1;
       }
-      //PRIMERO CREAR CONDICIÓN PARA MARCAR EL CARRITO ACTIVO
-      //PASAR A LA ACTIVIDAD DEL ESTUDIANTE E IR AL SKETCH
+      
       if(index===player.index){
         stroke(10);
         fill("red");
@@ -109,7 +106,7 @@ class Game {
     }
   }
 
-  //NOVENO CREAR FUNCIONES PARA DETECTAR SUPERPOSICION DE UN SPRITE
+
   handleFuel(index) {
     // Agregando combustible
     cars[index - 1].overlap(fuels, function(collector, collected) {
